@@ -1,0 +1,17 @@
+services:
+  web-app:
+
+    build: 
+      context: .
+    
+    ports:
+      - "8000:8000"
+      # порт контейнера соответствует порту компа
+
+    volumes:
+      - ./service:/service
+      # Подключаем папку service к локальному чето там
+      # Чтобы при подключении питона не ребилдить каждый раз
+
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
