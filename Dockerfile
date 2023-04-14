@@ -7,8 +7,9 @@ EXPOSE 8000
 # Открываем порт 
 
 RUN pip install -r /temp/requirements.txt
-RUN adduser --disabled-password service-user
+# RUN adduser --disabled-password service-user 
+# RUN chown service-user:service-user -R /service/
 
-USER service-user
+# USER service-user
 # Чтобы не происходило под root'ом
 
